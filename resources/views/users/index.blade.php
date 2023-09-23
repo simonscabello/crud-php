@@ -15,15 +15,15 @@
     </tr>
     </thead>
     <tbody>
-    @foreach ($usuarios as $usuario)
+    @foreach ($users as $user)
         <tr>
-            <td>{{ $usuario->name }}</td>
-            <td>{{ $usuario->phone_number }}</td>
-            <td>{{ $usuario->email }}</td>
+            <td>{{ $user->name }}</td>
+            <td>{{ $user->phone_number }}</td>
+            <td>{{ $user->email }}</td>
             <td>
-                <a href="{{ route('users.show', $usuario->id) }}">Visualizar</a> |
-                <a href="{{ route('users.edit', $usuario->id) }}">Editar</a> |
-                <form action="{{ route('users.destroy', $usuario->id) }}" method="post" style="display: inline;">
+                <a href="{{ route('users.show', $user->id) }}">Visualizar</a> |
+                <a href="{{ route('users.edit', $user->id) }}">Editar</a> |
+                <form action="{{ route('users.destroy', $user->id) }}" method="post" style="display: inline;">
                     @csrf
                     @method('DELETE')
                     <button type="submit">Excluir</button>
